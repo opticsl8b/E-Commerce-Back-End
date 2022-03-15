@@ -19,20 +19,37 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   // find one category by its `id` value
-  Category.findByPk(req.params.id,{
-    include:[{model:Product}]
-  }).then((categories)=>{
-res.json(categories)
-  })
+  Category.findByPk(req.params.id, {
+    include: [{ model: Product }],
+  }).then((categories) => {
+    res.json(categories);
+  });
   // be sure to include its associated Products
 });
 
 router.post("/", (req, res) => {
   // create a new category
+  Category.create({
+    category_name: req.body.category_name,
+  }).then((created) => {
+    res.json(created);
+  });
 });
 
 router.put("/:id", (req, res) => {
   // update a category by its `id` value
+  Category.update(
+    {
+      category_name: req.body.category_name,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  ).then((updated) => {
+    res.json(updated);
+  });
 });
 
 router.delete("/:id", (req, res) => {
