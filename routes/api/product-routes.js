@@ -49,9 +49,10 @@ router.get("/:id", (req, res) => {
     if (!product) {
       res.status(400).json({
         message: "No product was found under this id",
-      });return;
-    }res.json(product);
-    
+      });
+      return;
+    }
+    res.json(product);
   });
 });
 
@@ -131,6 +132,16 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   // delete one product by its `id` value
+  Product.destroy({
+    where: {
+      id: req.params.id,
+    },
+  }).then((product) => {
+    if (!product) {
+      res.status(400).json({ message: "No product with this id was found" });
+    }
+    res.json(product);
+  });
 });
 
 module.exports = router;
