@@ -22,6 +22,12 @@ router.get("/:id", (req, res) => {
   Category.findByPk(req.params.id, {
     include: [{ model: Product }],
   }).then((categories) => {
+    if(!categories){
+      res.status(400).json({
+        message: "No category was found under this id",
+      });
+      return;
+    }
     res.json(categories);
   });
   // be sure to include its associated Products
@@ -48,6 +54,12 @@ router.put("/:id", (req, res) => {
       },
     }
   ).then((updated) => {
+    if(!updated){
+      res.status(400).json({
+        message: "No category was found under this id",
+      });
+      return;
+    }
     res.json(updated);
   });
 });
@@ -59,6 +71,12 @@ router.delete("/:id", (req, res) => {
       id:req.params.id,
     }
   }).then((deleted)=>{
+    if(!deleted){
+    res.status(400).json({
+      message: "No category was found under this id",
+    });
+    return;
+  }
     res.json(deleted);
   })
 });

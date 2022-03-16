@@ -43,9 +43,9 @@ Open the terminal and run the command "npm start" or "npm run watch"</p>
 <h3 align="center">- Video Demo -</h3>
 <br>
 
-[Video-Demo-1/2](https://drive.google.com/file/d/1XjTFUKbi5_WyPPO6hxZY-lAFuUqNs_MB/view)
+[Video-Demo-1/2](https://drive.google.com/file/d/14-6SWA7MB6akhTU3RZLrWPZxxWJvnPOE/view)
 
-[Video-Demo-2/2](https://drive.google.com/file/d/1AePHBDa3Qpk8vWG58FIVVzDq6_caFrBn/view)
+[Video-Demo-2/2](https://drive.google.com/file/d/1QtnEbbKJUe5uemq-cz7onk_lAe_Bj_yq/view)
 <br>
 
 
